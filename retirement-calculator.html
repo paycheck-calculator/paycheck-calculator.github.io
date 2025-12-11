@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your financial future with our free online Retirement Calculator. Estimate compound interest, investment growth, and retirement savings.">
+    <meta name="keywords" content="retirement calculator, compound interest, 401k calculator, investment calculator, pension planning, savings goal">
+    <meta name="author" content="Paycheck Calculator">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paycheck-calculator.github.io/retirement-calculator.html">
+    <meta property="og:title" content="Retirement Calculator | Free Online Financial Planning Tool">
+    <meta property="og:description" content="Estimate your retirement savings and compound interest growth.">
+    <meta property="og:image" content="https://paycheck-calculator.github.io/og-image.png">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%23fff'%3E$%3C/text%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Retirement Calculator | Free Online Financial Planning Tool</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Specific adjustments for multiple inputs in the tool card */
+        .input-group { margin-bottom: 20px; }
+        .currency-symbol { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono'; font-weight: bold; color: var(--text-muted); z-index: 2; }
+        /* Adjust padding for inputs with currency symbol if needed, though scrambled-input has padding */
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="currentColor"/>
+                    <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">$</text>
+                </svg>
+                <span class="logo-text">PAYCHECK CALCULATOR</span>
+            </a>
+            <nav class="nav">
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn">
+                        Calculators
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="/">Paycheck Calculator</a>
+                        <a href="/mortgage-calculator.html">Mortgage Calculator</a>
+                        <a href="/loan-calculator.html">Loan Calculator</a>
+                        <a href="/compound-interest-calculator.html">Interest Calculator</a>
+                        <a href="/retirement-calculator.html">Retirement Calculator</a>
+                        <a href="/budget-calculator.html">Budget Calculator</a>
+                    </div>
+                </div>                
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="/" class="mobile-nav-link">Paycheck Calculator</a>
+            <a href="/retirement-calculator.html" class="mobile-nav-link">Retirement Calculator</a>
+            <a href="#features" class="mobile-nav-link">Features</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Retirement Calculator</h1>
+                <p class="hero-subtitle">Estimate your future wealth and the power of compound interest.</p>
+                
+                <div class="tool-card">
+                    <form class="tool-form" id="calculatorForm">
+                        
+                        <div class="input-group">
+                            <label for="currentPrincipal">Current Savings ($)</label>
+                            <input
+                                type="number"
+                                id="currentPrincipal"
+                                placeholder="e.g., 50000"
+                                class="scrambled-input"
+                                autocomplete="off"
+                                min="0"
+                            />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="monthlyContribution">Monthly Contribution ($)</label>
+                            <input
+                                type="number"
+                                id="monthlyContribution"
+                                placeholder="e.g., 1000"
+                                class="scrambled-input"
+                                autocomplete="off"
+                                min="0"
+                            />
+                        </div>
+
+                        <div class="filters">
+                            <div class="filter-group">
+                                <label for="currentAge">Current Age</label>
+                                <input type="number" id="currentAge" class="filter-input" placeholder="30" value="30" min="1" max="100">
+                            </div>
+                            <div class="filter-group">
+                                <label for="retirementAge">Retirement Age</label>
+                                <input type="number" id="retirementAge" class="filter-input" placeholder="65" value="65" min="1" max="100">
+                            </div>
+                            <div class="filter-group">
+                                <label for="interestRate">Annual Return (%)</label>
+                                <input type="number" id="interestRate" class="filter-input" placeholder="7" value="7" step="0.1">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="unscramble-btn" id="calculateBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                            <span>Calculate Growth</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="results-section hidden" id="resultsContainer">
+            <div class="container results-content">
+                <div class="results-header">
+                    <h2 class="results-title">Retirement Breakdown</h2>
+                    <div class="results-stats">
+                        <p class="results-count" id="resultsCount">Total: $0.00</p>
+                    </div>
+                </div>
+                <div class="results-grid" id="resultsGrid">
+                    </div>
+            </div>
+        </section>
+
+        <div class="empty-state" id="emptyState">
+            <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="m9 22 3-8 3 8"/><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"/><path d="M6 18h12"/>
+            </svg>
+            <h2>Start Planning Today</h2>
+            <p>Enter your current savings, contributions, and age to see how your money can grow.</p>
+        </div>
+        
+        <div class="no-results hidden" id="noResults">
+            <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M15 9l-6 6"></path>
+                <path d="m9 9 6 6"></path>
+            </svg>
+            <h2>Invalid Input</h2>
+            <p>Please ensure your retirement age is greater than your current age and values are positive.</p>
+        </div>
+
+        <section class="features-section" id="features">
+            <div class="container">
+                <h2 class="section-title">More Tools</h2>
+                <div class="features-grid">
+                    <a href="/" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 style="color: var(--success);">Paycheck Calculator</h3>
+                        <p>Calculate your net pay, including federal and state tax deductions.</p>
+                    </a>
+
+                    <a href="/mortgage-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <h3 style="color: #1E90FF;">Mortgage Calculator</h3>
+                        <p>Estimate your monthly mortgage payments and total interest paid.</p>
+                    </a>
+
+                    <a href="/investment-calculator.html" class="feature-card tool-card longest">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3 style="color: #9370DB;">Investment Calculator</h3>
+                        <p>See how your investment portfolio can grow over time.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Enter Details</h3>
+                        <p>Input your current savings, how much you plan to contribute monthly, and your age details.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Set Growth Rate</h3>
+                        <p>Enter an estimated annual return rate (e.g., 7% is a common historical average for stocks).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>View Projection</h3>
+                        <p>We calculate the compound interest to show your total estimated wealth at retirement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">About Retirement Planning</h2>
+                <div class="about-content">
+                    <p>The earlier you start saving, the more time your money has to grow through the power of compound interest. This calculator helps you visualize if you are on track to meet your retirement goals based on your current trajectory.</p>
+                    <p><strong>Disclaimer:</strong> This tool provides estimates based on constant rates of return. Real market returns fluctuate. Inflation, taxes, and changing expenses are not fully accounted for in this simple projection.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="widget-title">PAYCHECK CALCULATOR</h4>
+                    <p class="widget-text">Your one-stop source for powerful and free online financial and math tools.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Calculators</h4>
+                    <ul class="widget-links">
+                        <li><a href="/">Paycheck Calculator</a></li>
+                        <li><a href="/retirement-calculator.html">Retirement Calculator</a></li>
+                        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="/budget-calculator.html">Budget Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Pages</h4>
+                    <ul class="widget-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="currentColor"/>
+                        <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">$</text>
+                    </svg>
+                    <span>PAYCHECK CALCULATOR</span>
+                </div>
+                <p class="copyright">&copy; 2025 Paycheck Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference, if any, on load
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            const isOpen = mobileNav.classList.contains('active');
+            mobileMenuToggle.innerHTML = isOpen 
+                ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
+        });
+
+        // Retirement Calculation Logic
+        const form = document.getElementById('calculatorForm');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const resultsCount = document.getElementById('resultsCount');
+        const emptyState = document.getElementById('emptyState');
+        const noResults = document.getElementById('noResults');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get Values
+            const principal = parseFloat(document.getElementById('currentPrincipal').value) || 0;
+            const monthlyContrib = parseFloat(document.getElementById('monthlyContribution').value) || 0;
+            const currentAge = parseInt(document.getElementById('currentAge').value);
+            const retirementAge = parseInt(document.getElementById('retirementAge').value);
+            const rate = parseFloat(document.getElementById('interestRate').value);
+
+            // Validation
+            if (retirementAge <= currentAge) {
+                resultsContainer.classList.add('hidden');
+                emptyState.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            // Calculation
+            const years = retirementAge - currentAge;
+            const months = years * 12;
+            const monthlyRate = (rate / 100) / 12;
+
+            // Compound Interest Formula for Principal: P * (1 + r)^n
+            const futurePrincipal = principal * Math.pow(1 + monthlyRate, months);
+
+            // Future Value of a Series formula: PMT * [ (1 + r)^n - 1 ] / r
+            const futureSeries = monthlyContrib * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+
+            const totalFutureValue = futurePrincipal + futureSeries;
+            const totalContributed = principal + (monthlyContrib * months);
+            const totalInterest = totalFutureValue - totalContributed;
+
+            // Formatter
+            const fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
+            // Display Results
+            resultsGrid.innerHTML = `
+                <div class="word-card longest">
+                    <div class="word-info">
+                        <span class="word-text">Total at Age ${retirementAge}</span>
+                    </div>
+                    <span class="word-length">${fmt.format(totalFutureValue)}</span>
+                </div>
+                <div class="word-card">
+                    <div class="word-info">
+                        <span class="word-text">Total Interest</span>
+                    </div>
+                    <span class="word-length" style="color: var(--success);">${fmt.format(totalInterest)}</span>
+                </div>
+                <div class="word-card">
+                    <div class="word-info">
+                        <span class="word-text">Total Contributed</span>
+                    </div>
+                    <span class="word-length">${fmt.format(totalContributed)}</span>
+                </div>
+                <div class="word-card">
+                    <div class="word-info">
+                        <span class="word-text">Years to Grow</span>
+                    </div>
+                    <span class="word-length">${years} Years</span>
+                </div>
+            `;
+
+            resultsCount.textContent = `Est. Total: ${fmt.format(totalFutureValue)}`;
+            
+            // Show UI
+            emptyState.classList.add('hidden');
+            noResults.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</body>
+</html>
