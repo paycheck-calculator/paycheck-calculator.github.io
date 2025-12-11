@@ -75,6 +75,17 @@
             color: var(--text-muted);
             line-height: 1.6;
         }
+        
+        /* FIX: Ensure new sections have proper vertical padding */
+        .about-section, .how-it-works-section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        
+        /* FIX: Add extra margin to the final section before the footer */
+        .how-it-works-section {
+            margin-bottom: 50px; 
+        }
     </style>
 </head>
 <body>
@@ -350,8 +361,8 @@
     </a>
 
 </div>
-                
-              <section class="about-section" id="about-cd">
+            </div>
+        </section> <section class="about-section" id="about-cd">
                   <div class="container">
                       <h2 class="section-title">About Certificates of Deposit (CDs)</h2>
                       <div class="about-content">
