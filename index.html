@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your take-home pay, federal, and state taxes with our free online Paycheck Calculator. Fast, free, and easy to use payroll tool.">
+    <meta name="keywords" content="paycheck calculator, salary calculator, tax calculator, take home pay, hourly wage calculator, payroll, income tax">
+    <meta name="author" content="Paycheck Calculator">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paycheck-calculator.github.io/">
+    <meta property="og:title" content="Paycheck Calculator | Free Online Salary and Tax Tool">
+    <meta property="og:description" content="Calculate your take-home pay, federal, and state taxes with our free online Paycheck Calculator.">
+    <meta property="og:image" content="https://paycheck-calculator.github.io/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://paycheck-calculator.github.io/">
+    <meta property="twitter:title" content="Paycheck Calculator | Free Online Salary and Tax Tool">
+    <meta property="twitter:description" content="Calculate your take-home pay, federal, and state taxes with our free online Paycheck Calculator.">
+    <meta property="twitter:image" content="https://paycheck-calculator.github.io/og-image.png">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%23fff'%3E$%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%23000'/%3E%3Ctext x='90' y='120' font-family='monospace' font-size='100' font-weight='bold' text-anchor='middle' fill='%23fff'%3E$%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://paycheck-calculator.github.io/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Paycheck Calculator | Free Online Salary and Tax Tool</title>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Paycheck Calculator",
+        "description": "Calculate your take-home pay, federal, and state taxes with our free online Paycheck Calculator.",
+        "url": "https://paycheck-calculator.github.io/",
+        "applicationCategory": "FinancialApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Paycheck Calculator",
+            "url": "https://paycheck-calculator.github.io/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Paycheck Calculator",
+        "url": "https://paycheck-calculator.github.io/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://paycheck-calculator.github.io/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="currentColor"/>
+                    <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">$</text>
+                </svg>
+                <span class="logo-text">CALCULATOR</span>
+            </a>
+            <nav class="nav">
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn">
+                        Tools
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="/">Paycheck Calculator</a>
+                        <a href="/mortgage-calculator.html">Mortgage Calculator</a>
+                        <a href="/loan-calculator.html">Loan Calculator</a>
+                        <a href="/compound-interest-calculator.html">Interest Calculator</a>
+                        <a href="/retirement-calculator.html">Retirement Calculator</a>
+                        <a href="/budget-calculator.html">Budget Calculator</a>
+                        <a href="/gpa-calculator.html">GPA Calculator</a>
+                        <a href="/tip-calculator.html">Tip Calculator</a>
+                    </div>
+                </div>                
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="/">Paycheck Calculator</a>
+            <a href="/mortgage-calculator.html">Mortgage Calculator</a>
+            <a href="/loan-calculator.html">Loan Calculator</a>
+            <a href="/compound-interest-calculator.html">Interest Calculator</a>
+            <a href="/retirement-calculator.html">Retirement Calculator</a>
+            <a href="/budget-calculator.html">Budget Calculator</a>
+            <a href="/gpa-calculator.html">GPA Calculator</a>
+            <a href="/tip-calculator.html">Tip Calculator</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Paycheck Calculator</h1>
+                <p class="hero-subtitle">Calculate your net pay, federal and state taxes.</p>
+                
+                <div class="tool-card">
+                    <form class="tool-form" id="calculatorForm">
+                        <div class="input-group">
+                            <label for="grossPayInput">Gross Annual Pay ($)</label>
+                            <input
+                                type="number"
+                                id="grossPayInput"
+                                placeholder="e.g., 60000"
+                                class="scrambled-input"
+                                autocomplete="off"
+                                required
+                                min="1"
+                            />
+                            <button type="button" class="clear-btn" id="clearBtn" aria-label="Clear input">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="filters">
+                            <div class="filter-group">
+                                <label for="payFrequencySelect">Pay Frequency</label>
+                                <select id="payFrequencySelect" class="filter-select" required>
+                                    <option value="annual">Annual</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="biweekly" selected>Bi-Weekly</option>
+                                    <option value="weekly">Weekly</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="filingStatusSelect">Filing Status</label>
+                                <select id="filingStatusSelect" class="filter-select" required>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="unscramble-btn" id="calculateBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                                <circle cx="12" cy="16" r="3"/>
+                            </svg>
+                            <span>Calculate Paycheck</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="results-section hidden" id="resultsContainer">
+            <div class="container results-content">
+                <div class="results-header">
+                    <h2 class="results-title">Paycheck Breakdown</h2>
+                    <div class="results-stats">
+                        <p class="results-count" id="resultsCount">Net Pay: $0.00</p>
+                        <button class="copy-all-btn" id="copyAllBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy Breakdown
+                        </button>
+                    </div>
+                </div>
+                <div class="results-grid" id="resultsGrid">
+                    </div>
+            </div>
+        </section>
+
+        <div class="empty-state" id="emptyState">
+            <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M12 18v-6"></path>
+                <path d="M9 15h6"></path>
+            </svg>
+            <h2>Ready to Calculate Your Pay?</h2>
+            <p>Enter your gross annual pay and pay frequency above to see your estimated take-home income.</p>
+        </div>
+        
+        <div class="no-results hidden" id="noResults">
+            <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M15 9l-6 6"></path>
+                <path d="m9 9 6 6"></path>
+            </svg>
+            <h2>No Valid Input</h2>
+            <p>Please enter a valid gross annual pay amount (greater than zero) to calculate your paycheck.</p>
+        </div>
+
+        <section class="features-section" id="tools">
+            <div class="container">
+                <h2 class="section-title">All Calculators</h2>
+                <p class="section-subtitle">A collection of powerful and easy-to-use financial, math, and lifestyle tools.</p>
+                <div class="features-grid">
+                    <a href="/" class="feature-card tool-card longest">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 style="color: var(--success);">Paycheck Calculator</h3>
+                        <p>Calculate your net pay, including federal and state tax deductions.</p>
+                    </a>
+                    <a href="/mortgage-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="m9 22 3-8 3 8"/><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"/><path d="M6 18h12"/></svg>
+                        </div>
+                        <h3 style="color: #FF6347;">Mortgage Calculator</h3>
+                        <p>Estimate your monthly mortgage payments and total interest paid.</p>
+                    </a>
+                    <a href="/loan-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-6l-2 5-2-5H2z"/></svg>
+                        </div>
+                        <h3 style="color: #1E90FF;">Loan Calculator</h3>
+                        <p>Determine loan payments, total interest, and amortization schedule.</p>
+                    </a>
+                    <a href="/compound-interest-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18M4 18h4M16 6h4M10 12h4"/><path d="M9 10v4M15 10v4"/></svg>
+                        </div>
+                        <h3 style="color: #DAA520;">Interest Calculator</h3>
+                        <p>See how your savings can grow over time with compound interest.</p>
+                    </a>
+                    <a href="/retirement-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3 style="color: #9370DB;">Retirement Calculator</h3>
+                        <p>Estimate the savings you need for a comfortable retirement.</p>
+                    </a>
+                    <a href="/budget-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 style="color: #DC143C;">Budget Calculator</h3>
+                        <p>Track your income and expenses to manage your monthly budget.</p>
+                    </a>
+                    <a href="/bmi-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-6V4H6v6H0l12 14 12-14z"/></svg>
+                        </div>
+                        <h3 style="color: #00CED1;">BMI Calculator</h3>
+                        <p>Calculate your Body Mass Index (BMI) based on your height and weight.</p>
+                    </a>
+                    <a href="/tip-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        </div>
+                        <h3 style="color: #FFA500;">Tip Calculator</h3>
+                        <p>Quickly calculate tip amounts and split the bill among friends.</p>
+                    </a>
+                     <a href="/scientific-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="20" x="3" y="2" rx="2" ry="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h8"/></svg>
+                        </div>
+                        <h3 style="color: #6A5ACD;">Scientific Calculator</h3>
+                        <p>A full-featured scientific calculator for complex math equations.</p>
+                    </a>
+                    <a href="/date-calculator.html" class="feature-card tool-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        </div>
+                        <h3 style="color: #3CB371;">Date Calculator</h3>
+                        <p>Calculate the difference between two dates or find a future date.</p>
+                    </a>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <h3 class="stat-number" id="totalWords">Millions+</h3>
+                        <p class="stat-label">Calculations</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">20+</h3>
+                        <p class="stat-label">Tax Jurisdictions (Mock)</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">100%</h3>
+                        <p class="stat-label">Free to Use</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How the Paycheck Calculator Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Input Gross Pay</h3>
+                        <p>Enter your gross annual salary or hourly wage into the field. This is your total pay before any deductions.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Select Frequency & Status</h3>
+                        <p>Choose your pay frequency (e.g., Bi-Weekly) and your tax filing status (e.g., Single, Married).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Your Net Pay</h3>
+                        <p>The calculator applies estimated federal and state taxes, plus FICA (Social Security and Medicare), and displays your net take-home pay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">About the Paycheck Calculator</h2>
+                <div class="about-content">
+                    <p>The Paycheck Calculator is a free, fast, and easy-to-use tool designed to help you estimate your take-home pay. Understanding your deductions for taxes, FICA, and pre-tax benefits can be complicated, but our tool provides a clear, per-pay-period breakdown.</p>
+                    <p><strong>Disclaimer:</strong> This tool uses simplified, mock tax rates for demonstration purposes. It is an estimation and not a substitute for professional payroll or tax advice. Actual tax withholdings may vary based on your W-4 elections, location, and specific circumstances.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="widget-title">CALCULATOR</h4>
+                    <p class="widget-text">Your one-stop source for powerful and free online financial and math tools.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/paychecktool" class="social-link" aria-label="Follow us on Twitter">
+                            <svg ...></svg>
+                        </a>
+                        <a href="https://github.com/paycheckcalculator" class="social-link" aria-label="Check out our GitHub">
+                            <svg ...></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Calculators</h4>
+                    <ul class="widget-links">
+                        <li><a href="/">Paycheck Calculator</a></li>
+                        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="/loan-calculator.html">Loan Calculator</a></li>
+                        <li><a href="/compound-interest-calculator.html">Interest Calculator</a></li>
+                        <li><a href="/retirement-calculator.html">Retirement Calculator</a></li>
+                        <li><a href="/budget-calculator.html">Budget Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Pages</h4>
+                    <ul class="widget-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Stay Updated</h4>
+                    <p class="widget-text">Subscribe to get the latest updates on new tools and features.</p>
+                    <form class="subscribe-form" id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="currentColor"/>
+                        <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">$</text>
+                    </svg>
+                    <span>CALCULATOR</span>
+                </div>
+                <p class="copyright">&copy; 2025 Paycheck Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
